@@ -8,7 +8,7 @@ import java.io.IOException;
  * Використовується для запису дій та подій, що відбуваються в програмі.
  */
 public class Logger {
-    private FileWriter fileWriter;
+    private FileWriter fileWriter; // Об'єкт для запису тексту у файл
 
     /**
      * Конструктор створює об'єкт Logger для запису повідомлень у вказаний файл.
@@ -17,7 +17,7 @@ public class Logger {
      * @throws IOException якщо виникає помилка при створенні або відкритті файлу.
      */
     public Logger(String fileName) throws IOException {
-        fileWriter = new FileWriter(fileName, true);
+        fileWriter = new FileWriter(fileName, true); // Відкриття файлу у режимі додавання (append)
     }
 
     /**
@@ -27,9 +27,9 @@ public class Logger {
      * @throws IOException якщо виникає помилка при записі у файл.
      */
     public void log(String message) throws IOException {
-        if (fileWriter != null) {
-            fileWriter.write(message + "\n");
-            fileWriter.flush();
+        if (fileWriter != null) {           // Перевірка, чи файл відкритий
+            fileWriter.write(message + "\n"); // Запис повідомлення з новим рядком
+            fileWriter.flush();               // Очищення буфера, щоб дані записалися одразу
         }
     }
 
@@ -38,11 +38,11 @@ public class Logger {
      * У разі виникнення помилки при закритті, повідомлення про помилку буде виведено в консоль.
      */
     public void close() {
-        if (fileWriter != null) {
+        if (fileWriter != null) {          // Перевірка, чи файл відкритий
             try {
-                fileWriter.close();
+                fileWriter.close();        // Закриття файлу
             } catch (IOException e) {
-                System.err.println("Виникла помилка при закриванні файла: " + e.getMessage());
+                System.err.println("Виникла помилка при закриванні файла: " + e.getMessage()); // Вивід помилки
             }
         }
     }

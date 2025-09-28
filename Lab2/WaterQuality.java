@@ -5,16 +5,16 @@ package KI305.Kravchenko.lab2;
  * Включає рівень pH та рівень кисню.
  */
 public class WaterQuality {
-    private double ph;
-    private double oxygenLevel;
+    private double ph;           // Рівень pH води
+    private double oxygenLevel;  // Рівень кисню у воді (мг/л)
 
     /**
      * Конструктор за замовчуванням створює об'єкт з типовими значеннями якості води:
      * pH = 6.5 та рівень кисню = 6.5.
      */
     public WaterQuality() {
-        this.ph = 6.5;
-        this.oxygenLevel = 6.5;
+        this.ph = 6.5;            // Встановлення стандартного pH
+        this.oxygenLevel = 6.5;   // Встановлення стандартного рівня кисню
     }
 
     /**
@@ -24,8 +24,8 @@ public class WaterQuality {
      * @param oxygenLevel рівень кисню у воді
      */
     public WaterQuality(double ph, double oxygenLevel) {
-        this.ph = ph;
-        this.oxygenLevel = oxygenLevel;
+        this.ph = ph;              // Ініціалізація pH
+        this.oxygenLevel = oxygenLevel; // Ініціалізація рівня кисню
     }
 
     /**
@@ -34,7 +34,7 @@ public class WaterQuality {
      * @param ph новий рівень pH
      */
     public void setPh(double ph) {
-        this.ph = ph;
+        this.ph = ph;              // Оновлення значення pH
     }
 
     /**
@@ -43,7 +43,7 @@ public class WaterQuality {
      * @param oxygenLevel новий рівень кисню
      */
     public void setOxygenLevel(double oxygenLevel) {
-        this.oxygenLevel = oxygenLevel;
+        this.oxygenLevel = oxygenLevel; // Оновлення рівня кисню
     }
 
     /**
@@ -52,7 +52,7 @@ public class WaterQuality {
      * @return рівень pH води
      */
     public double getPh() {
-        return ph;
+        return ph;                 // Повернення поточного pH
     }
 
     /**
@@ -61,7 +61,6 @@ public class WaterQuality {
      * @return рівень кисню у воді
      */
     public double getOxygenLevel() {
-        return oxygenLevel;
+        return oxygenLevel;        // Повернення поточного рівня кисню
     }
 }
-

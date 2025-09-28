@@ -5,7 +5,7 @@ package KI305.Kravchenko.lab2;
  * Має єдину характеристику — ім'я риби.
  */
 public class Fish {
-    private String name;
+    private String name; // Ім'я риби
 
     /**
      * Конструктор створює новий об'єкт риби з заданим іменем.
@@ -13,7 +13,7 @@ public class Fish {
      * @param name назва риби
      */
     public Fish(String name) {
-        this.name = name;
+        this.name = name; // Ініціалізація імені риби
     }
 
     /**
@@ -22,6 +22,6 @@ public class Fish {
      * @return назва риби
      */
     public String getName() {
-        return name;
+        return name; // Повертає ім'я риби
     }
 }
