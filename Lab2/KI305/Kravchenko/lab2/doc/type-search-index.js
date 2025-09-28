@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"KI305.Kravchenko.lab2","l":"Ecosystem"},{"p":"KI305.Kravchenko.lab2","l":"Fish"},{"p":"KI305.Kravchenko.lab2","l":"Logger"},{"p":"KI305.Kravchenko.lab2","l":"Water"},{"p":"KI305.Kravchenko.lab2","l":"WaterDriver"},{"p":"KI305.Kravchenko.lab2","l":"WaterQuality"}];updateSearchResults();
