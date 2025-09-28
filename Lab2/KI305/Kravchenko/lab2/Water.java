@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import KI305.Kravchenko.lab2.Logger;
+
+import KI305.Kravchenko.lab2.Fish;
+
 /**
  * Клас {@code Water} представляє водойму з характеристиками, такими як
  * екосистема, риби та якість води. Цей клас дозволяє додавати та видаляти риб,

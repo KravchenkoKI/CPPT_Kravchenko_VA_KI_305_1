@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import KI305.Kravchenko.lab2.Water;
+
+import KI305.Kravchenko.lab2.Fish;
+
 /**
  * Клас {@code WaterDriver} є точкою входу в програму, яка демонструє роботу з класом {@link Water}.
  * Програма моделює взаємодію з водоймою, її екосистемою, рибами та якістю води.

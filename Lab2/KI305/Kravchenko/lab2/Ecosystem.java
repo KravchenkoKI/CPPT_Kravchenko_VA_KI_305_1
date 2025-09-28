@@ -6,16 +6,16 @@ package KI305.Kravchenko.lab2;
  * рослин і тварин, що живуть у водоймі.
  */
 public class Ecosystem {
-    private int plantCount;  // Кількість рослин в екосистемі
-    private int animalCount; // Кількість тварин в екосистемі
+    private int plantCount;   // Кількість рослин у екосистемі
+    private int animalCount;  // Кількість тварин у екосистемі
 
     /**
      * Конструктор за замовчуванням, створює екосистему з нульовою кількістю
      * рослин та тварин.
      */
     public Ecosystem() {
-        this.plantCount = 0;  // Ініціалізація рослин нулем
-        this.animalCount = 0; // Ініціалізація тварин нулем
+        this.plantCount = 0;
+        this.animalCount = 0;
     }
 
     /**
@@ -25,8 +25,8 @@ public class Ecosystem {
      * @param animalCount кількість тварин в екосистемі
      */
     public Ecosystem(int plantCount, int animalCount) {
-        this.plantCount = plantCount;   // Встановлення кількості рослин
-        this.animalCount = animalCount; // Встановлення кількості тварин
+        this.plantCount = plantCount;
+        this.animalCount = animalCount;
     }
 
     /**
@@ -35,7 +35,7 @@ public class Ecosystem {
      * @param plantCount нова кількість рослин
      */
     public void setPlantCount(int plantCount) {
-        this.plantCount = plantCount; // Оновлення кількості рослин
+        this.plantCount = plantCount;
     }
 
     /**
@@ -44,6 +44,24 @@ public class Ecosystem {
      * @param animalCount нова кількість тварин
      */
     public void setAnimalCount(int animalCount) {
-        this.animalCount = animalCount; // Оновлення кількості тварин
+        this.animalCount = animalCount;
+    }
+
+    /**
+     * Повертає кількість рослин в екосистемі.
+     *
+     * @return кількість рослин
+     */
+    public int getPlantCount() {
+        return plantCount;
+    }
+
+    /**
+     * Повертає кількість тварин в екосистемі.
+     *
+     * @return кількість тварин
+     */
+    public int getAnimalCount() {
+        return animalCount;
     }
 }
