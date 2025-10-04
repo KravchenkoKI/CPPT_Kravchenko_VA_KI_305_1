@@ -1,4 +1,4 @@
-package Lab3.KI305.Kravchenko.Lab3;
+package Lab3.KI305.Kravchenko.lab3;
 
 /**
  * Клас {@code Fish} представляє рибу, що живе у водоймі.

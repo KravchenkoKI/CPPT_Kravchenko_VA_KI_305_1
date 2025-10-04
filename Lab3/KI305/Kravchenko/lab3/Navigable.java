@@ -1,4 +1,4 @@
-package Lab3.KI305.Kravchenko.Lab3;
+package Lab3.KI305.Kravchenko.lab3;
 
 /**
  * Інтерфейс {@code Navigable} представляє можливість для водойми
