@@ -9,7 +9,7 @@ import java.util.List;
  * Параметризований клас, що представляє грузову машину як контейнер для вантажу
  * @param <T> тип вантажу, що перевозиться
  */
-public class Truck<T> {
+public class Truck<T extends Comparable<T>> {
     private List<T> cargo;
     private double maxWeight;
     private String model;
