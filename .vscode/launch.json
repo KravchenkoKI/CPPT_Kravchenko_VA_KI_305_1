@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Запустити waterlab12.main",
+            "type": "python",
+            "request": "launch",
+            "module": "waterlab12.main",
+            "justMyCode": true,
+            "console": "integratedTerminal"
+        }
+    ]
+}

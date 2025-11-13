@@ -9,14 +9,16 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Equation</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ckpaca%5Conedrive%5C%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5C%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B8%20%D0%BF%D0%BE%D0%BB%D1%96%D1%82%D1%94%D1%85%5C%D0%BF%D0%BE%D0%BB%D1%96%D1%82%D0%B5%D1%85%203%20%D0%BA%D1%83%D1%80%D1%81%201%20%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%5C%D0%BA%D0%B7%D0%BF%5Ccppt_kravchenko_va_ki_305_1%5Cki305%5Ckravchenko%5Clab8%5Cequation.py">c:\users\kpaca\onedrive\документы\роботи політєх\політех 3 курс 1 семестр\кзп\cppt_kravchenko_va_ki_305_1\ki305\kravchenko\lab8\equation.py</a></font></td></tr></table>
-    <p><tt>Функція:&nbsp;y&nbsp;=&nbsp;sin(x)&nbsp;/&nbsp;tg(4x)&nbsp;=&nbsp;sin(x)&nbsp;/&nbsp;tan(4*x)<br>
+    <p><tt>Ціль&nbsp;програми:&nbsp;реалізувати&nbsp;обчислення&nbsp;функції&nbsp;y&nbsp;=&nbsp;sin(x)&nbsp;/&nbsp;tg(4x),<br>
+забезпечити&nbsp;запис&nbsp;та&nbsp;зчитування&nbsp;результатів&nbsp;у&nbsp;текстовий&nbsp;і&nbsp;бінарний&nbsp;файли,<br>
+а&nbsp;також&nbsp;обробку&nbsp;типових&nbsp;помилок&nbsp;(некоректний&nbsp;ввід,&nbsp;ділення&nbsp;на&nbsp;нуль,&nbsp;відсутні&nbsp;файли).<br>
 &nbsp;<br>
-Функціональність:<br>
--&nbsp;<a href="#-calculate">calculate</a>(x):&nbsp;обчислює&nbsp;y,&nbsp;обробляючи&nbsp;випадки&nbsp;ділення&nbsp;на&nbsp;нуль&nbsp;та&nbsp;інші&nbsp;неприпустимі&nbsp;значення<br>
--&nbsp;<a href="#-write_res_txt">write_res_txt</a>(fname,&nbsp;result):&nbsp;запис&nbsp;результату&nbsp;у&nbsp;текстовий&nbsp;файл<br>
--&nbsp;<a href="#-read_res_txt">read_res_txt</a>(fname):&nbsp;читання&nbsp;результату&nbsp;з&nbsp;текстового&nbsp;файлу<br>
--&nbsp;<a href="#-write_res_bin">write_res_bin</a>(fname,&nbsp;result):&nbsp;запис&nbsp;результату&nbsp;у&nbsp;двійковий&nbsp;файл&nbsp;(double)<br>
--&nbsp;<a href="#-read_res_bin">read_res_bin</a>(fname):&nbsp;читання&nbsp;результату&nbsp;з&nbsp;двійкового&nbsp;файлу&nbsp;(double)</tt></p>
+Функції:<br>
+&nbsp;-&nbsp;<a href="#-writeResTxt">writeResTxt</a>(fName,&nbsp;result)&nbsp;&nbsp;—&nbsp;запис&nbsp;результату&nbsp;у&nbsp;текстовий&nbsp;файл<br>
+&nbsp;-&nbsp;<a href="#-readResTxt">readResTxt</a>(fName)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;читання&nbsp;результату&nbsp;з&nbsp;текстового&nbsp;файлу<br>
+&nbsp;-&nbsp;<a href="#-writeResBin">writeResBin</a>(fName,&nbsp;result)&nbsp;&nbsp;—&nbsp;запис&nbsp;результату&nbsp;у&nbsp;двійковий&nbsp;файл&nbsp;(формат&nbsp;'f')<br>
+&nbsp;-&nbsp;<a href="#-readResBin">readResBin</a>(fName)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;читання&nbsp;результату&nbsp;з&nbsp;двійкового&nbsp;файлу&nbsp;(формат&nbsp;'f')<br>
+&nbsp;-&nbsp;<a href="#-calculate">calculate</a>(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;обчислення&nbsp;y&nbsp;=&nbsp;sin(x)&nbsp;/&nbsp;tan(4x)</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -27,19 +29,35 @@
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
 </td><td width="25%" valign=top><a href="os.html">os</a><br>
 </td><td width="25%" valign=top><a href="struct.html">struct</a><br>
-</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-calculate"><strong>calculate</strong></a>(x)</dt><dd><tt>Обчислює&nbsp;y&nbsp;=&nbsp;sin(x)&nbsp;/&nbsp;tan(4*x).<br>
-Повертає&nbsp;float.<br>
-Якщо&nbsp;знаменник&nbsp;дорівнює&nbsp;нулю&nbsp;або&nbsp;результат&nbsp;некоректний,&nbsp;кидає&nbsp;ValueError.</tt></dd></dl>
- <dl><dt><a name="-read_res_bin"><strong>read_res_bin</strong></a>(fname)</dt><dd><tt>Читання&nbsp;double&nbsp;з&nbsp;двійкового&nbsp;файлу.&nbsp;Повертає&nbsp;float.</tt></dd></dl>
- <dl><dt><a name="-read_res_txt"><strong>read_res_txt</strong></a>(fname)</dt><dd><tt>Читання&nbsp;результату&nbsp;з&nbsp;текстового&nbsp;файлу.&nbsp;Повертає&nbsp;float.</tt></dd></dl>
- <dl><dt><a name="-write_res_bin"><strong>write_res_bin</strong></a>(fname, result)</dt><dd><tt>Запис&nbsp;результату&nbsp;у&nbsp;двійковий&nbsp;файл&nbsp;як&nbsp;double&nbsp;(формат&nbsp;'d').</tt></dd></dl>
- <dl><dt><a name="-write_res_txt"><strong>write_res_txt</strong></a>(fname, result)</dt><dd><tt>Записує&nbsp;результат&nbsp;у&nbsp;текстовий&nbsp;файл&nbsp;(utf-8).</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-calculate"><strong>calculate</strong></a>(x)</dt><dd><tt>Обчислення&nbsp;функції&nbsp;за&nbsp;варіантом:<br>
+&nbsp;&nbsp;y&nbsp;=&nbsp;sin(x)&nbsp;/&nbsp;tan(4x)<br>
+&nbsp;<br>
+Якщо&nbsp;знаменник&nbsp;дорівнює&nbsp;нулю&nbsp;—&nbsp;піднімає&nbsp;ZeroDivisionError.<br>
+Параметри:<br>
+&nbsp;&nbsp;x&nbsp;—&nbsp;число&nbsp;(float)<br>
+Повертає:<br>
+&nbsp;&nbsp;y&nbsp;—&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-readResBin"><strong>readResBin</strong></a>(fName)</dt><dd><tt>Читання&nbsp;результату&nbsp;з&nbsp;двійкового&nbsp;файлу.<br>
+Якщо&nbsp;файл&nbsp;існує&nbsp;—&nbsp;повертає&nbsp;розпаковане&nbsp;значення&nbsp;(float).<br>
+Якщо&nbsp;файлу&nbsp;немає&nbsp;—&nbsp;виводить&nbsp;повідомлення&nbsp;і&nbsp;повертає&nbsp;0.0.</tt></dd></dl>
+ <dl><dt><a name="-readResTxt"><strong>readResTxt</strong></a>(fName)</dt><dd><tt>Читання&nbsp;результату&nbsp;з&nbsp;текстового&nbsp;файлу.<br>
+Якщо&nbsp;файл&nbsp;існує&nbsp;—&nbsp;повертає&nbsp;рядок,&nbsp;прочитаний&nbsp;з&nbsp;файлу.<br>
+Якщо&nbsp;файлу&nbsp;немає&nbsp;—&nbsp;виводить&nbsp;повідомлення&nbsp;і&nbsp;повертає&nbsp;0.0.</tt></dd></dl>
+ <dl><dt><a name="-writeResBin"><strong>writeResBin</strong></a>(fName, result)</dt><dd><tt>Запис&nbsp;результату&nbsp;у&nbsp;двійковий&nbsp;файл.<br>
+Використовується&nbsp;формат&nbsp;'f'&nbsp;(float,&nbsp;4&nbsp;байти)&nbsp;—&nbsp;як&nbsp;у&nbsp;демонстраційній&nbsp;програмі&nbsp;методички.<br>
+fName&nbsp;&nbsp;—&nbsp;ім'я&nbsp;файлу&nbsp;(рядок)<br>
+result&nbsp;—&nbsp;числовий&nbsp;результат&nbsp;(float)</tt></dd></dl>
+ <dl><dt><a name="-writeResTxt"><strong>writeResTxt</strong></a>(fName, result)</dt><dd><tt>Запис&nbsp;результату&nbsp;у&nbsp;текстовий&nbsp;файл.<br>
+fName&nbsp;&nbsp;—&nbsp;ім'я&nbsp;файлу&nbsp;(рядок)<br>
+result&nbsp;—&nbsp;числовий&nbsp;результат&nbsp;(float)<br>
+Файл&nbsp;створюється/перезаписується&nbsp;у&nbsp;поточному&nbsp;каталозі.</tt></dd></dl>
 </td></tr></table>
 </body></html>
